@@ -68,11 +68,11 @@ namespace CarGame
                 Console.WriteLine("(F)İLERİ,(L)SOLA,(R)SAĞA:");
                 var INPUT_2 = Console.ReadLine();
                 char[] input2Array = INPUT_2.ToCharArray();
-                var chs = "";
+                var historyChar = "";
                 foreach (var character in input2Array)
                 {
                     var str = character.ToString();
-                    chs += str;
+                    historyChar += str;
                     Direction newDirection = car.UseSteeringWhell(car, str);
                     Position newPosition = car.Forward(car, str);
 
@@ -89,7 +89,7 @@ namespace CarGame
                     }
                     car.Drive(newPosition, newDirection);
                     engine.CarRefresh(car);
-                    Console.WriteLine(chs);
+                    Console.WriteLine(historyChar);
                 }
             }
             Console.ReadLine();

@@ -7,7 +7,8 @@ namespace CarGame
         public int _x { get; private set; }
         public int _y { get; private set; }
         public Car Car { get; private set; }
-        public ConsoleColor ConsoleColor { get; private set; } = ConsoleColor.Black;
+        private const ConsoleColor DefaultCellBackgroundColor= ConsoleColor.Black;
+        public ConsoleColor ConsoleColor { get; private set; } = DefaultCellBackgroundColor;
 
         public Cell(int x,int y)
         {
@@ -31,7 +32,7 @@ namespace CarGame
         public void CarClear()
         {
             this.Car = null;
-            this.ConsoleColor = ConsoleColor.Black;
+            this.ConsoleColor = DefaultCellBackgroundColor;
         }
 
     }
