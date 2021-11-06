@@ -17,6 +17,7 @@ namespace CarGame
             this.Car = newCar;
             PlaceCar(this.Car, this.Map);
             Draw(this.Map);
+
         }
         private void CarClear()
         {

@@ -90,6 +90,13 @@ namespace CarGame
                     car.Drive(newPosition, newDirection);
                     engine.CarRefresh(car);
                     Console.WriteLine(historyChar);
+
+                    Console.WriteLine("-----------Durum-------------");
+                    Console.WriteLine("x:{0},y:{1},d:{2}",
+                       car._currentPosition.X,
+                        car._currentPosition.Y,
+                        car._currentDirection.DirectionSymbol);
+
                 }
             }
             Console.ReadLine();
@@ -106,7 +113,7 @@ namespace CarGame
         static string InputRotateToFill(string input)
         {
             string InputRotate = "N";//default
-            if (Definitions.directions.Any(f => f.DirectionSymbol == input))
+            if (Definitions.directions.Any(f => f.DirectionSymbol.ToLower() == input.ToLower()))
             {
                 InputRotate = input;
             }
